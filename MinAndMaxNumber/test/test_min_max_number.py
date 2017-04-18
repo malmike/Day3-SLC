@@ -1,4 +1,7 @@
-class MaxMinTest(TestCase):
+import unittest
+from app.find_max_min import *
+
+class MaxMinTest(unittest.TestCase):
     """docstring for MaxMinTest"""
 
     def test_find_max_min_four(self):
