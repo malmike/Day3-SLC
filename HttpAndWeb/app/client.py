@@ -10,7 +10,7 @@ class ConsumingPublicApi(object):
     def __init__(self):
         self.url = 'https://api.github.com/users/'
 
-    def request(self, user):
+    def get_api_data(self, user):
         if isinstance(user, str):
             self.url += "%s" % user
             request = Request(self.url)

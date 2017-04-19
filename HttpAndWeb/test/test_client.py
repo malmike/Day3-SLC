@@ -44,13 +44,13 @@ class ClientTestCase(unittest.TestCase):
     def test_request(self):
         """Test a simple request."""
         user = 'test_user'
-        response = self.client.request(user)
+        response = self.client.get_api_data(user)
         self.assertIn('name', response)
         self.assertEqual(response['name'], 'Male Michael')
     def test_unknown_user(self):
         """Test a simple request."""
         user = 'unknown_test'
-        response = self.client.request(user)
+        response = self.client.get_api_data(user)
         self.assertEqual(response, 'Client doesnot exist')
     def test_arg_not_string_raises_type_error(self):
-        self.assertRaises(TypeError, self.client.request, 1)
+        self.assertRaises(TypeError, self.client.get_api_data, 1)
